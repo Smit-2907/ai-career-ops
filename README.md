@@ -84,3 +84,15 @@ python3 tools/posting_guard.py --text --json < sample_job.txt
 # 5. Launch the Web Application
 cd web && npm run dev
 ```
+
+
+---
+
+## Acknowledgements & Open Source Credits
+
+This project is an open-source hybrid integration built on the shoulders of two outstanding projects:
+
+- **[career-ops](https://github.com/career-ops-hq/career-ops)**: Created by [Santiago Fernández de Valderrama (@santifer)](https://github.com/santifer) and 700+ contributors. Provides the zero-token ATS provider discovery network, liveness checks, Playwright HTML/CSS resume engine, live browser application assistant, Go TUI, and Next.js web interface.
+- **[ai-job-search](https://github.com/ai-job-search-dev/ai-job-search)**: Created by [Mads Lorentzen](https://github.com/MadsLorentzen). Provides the multi-agent Drafter-Reviewer loop, prompt-injection security guards (`posting_guard.py`), and factual grounding audit methodology.
+
+Both upstream projects are licensed under the **MIT License**. This hybrid project is released under the **MIT License** with full attribution and preservation of all upstream copyright notices (see [LICENSE](LICENSE)).
