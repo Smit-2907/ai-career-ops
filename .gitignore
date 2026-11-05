@@ -1,0 +1,137 @@
+# ==============================================================================
+# AI-Career-Ops .gitignore
+# STRICT PRIVACY RULES: NEVER COMMIT PERSONAL CANDIDATE DATA OR SECRETS
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Personal Candidate Data (User Layer)
+# ------------------------------------------------------------------------------
+cv.md
+cv.*
+!cv.example.md
+article-digest.md
+voice-dna.md
+salary_data.json
+job_search_tracker.csv
+
+# Personal Configs & Profiles
+config/profile.yml
+config/privacy.yml
+config/cv-facts.json
+config/plugins.yml
+config/local-paths.txt
+
+modes/_profile.md
+modes/_custom.md
+modes/_brief.md
+
+# Legacy & User LaTeX / Word Resumes
+legacy-latex/
+*Resume*
+*resume*
+
+# Research caches & sync states
+company_research/*.json
+!company_research/.gitkeep
+gmail_sync/
+local/
+.career-ops-data
+
+# ------------------------------------------------------------------------------
+# 2. Tracking Data & SQLite Indexes
+# ------------------------------------------------------------------------------
+data/*
+!data/.gitkeep
+!data/offers/
+!data/parser-output/
+data/offers/*
+!data/offers/.gitkeep
+data/parser-output/**
+!data/parser-output/**/.gitkeep
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.tsv
+
+# ------------------------------------------------------------------------------
+# 3. Application Archives, Reports, and Generated PDFs
+# ------------------------------------------------------------------------------
+documents/applications/**
+!documents/applications/.gitkeep
+documents/cv/**
+!documents/cv/.gitkeep
+documents/diplomas/**
+!documents/diplomas/.gitkeep
+documents/linkedin/**
+!documents/linkedin/.gitkeep
+documents/references/**
+!documents/references/.gitkeep
+documents/projects/**
+!documents/projects/.gitkeep
+documents/postings/**
+!documents/postings/.gitkeep
+writing-samples/**
+!writing-samples/.gitkeep
+writing-samples/*.md
+
+reports/**
+!reports/.gitkeep
+output/**
+!output/.gitkeep
+jds/**
+!jds/.gitkeep
+interview-prep/**
+!interview-prep/.gitkeep
+batch/logs/**
+batch/tracker-additions/**
+upskill/*.md
+
+# Generated PDFs and TeX Artifacts
+*.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# ------------------------------------------------------------------------------
+# 4. Dependencies, Build Outputs, and Binaries
+# ------------------------------------------------------------------------------
+node_modules/
+*/node_modules/
+web/node_modules/
+.next/
+web/.next/
+dist/
+build/
+*.tsbuildinfo
+bun.lock
+dashboard/cops-dashboard
+
+# Python
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# ------------------------------------------------------------------------------
+# 5. Secrets, Environment, and Editor Files
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.local
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Agent/CLI local caches
+.claude/projects/
+.claude/settings.local.json
+skills-lock.json
