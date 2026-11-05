@@ -235,3 +235,4 @@ Proposes batch status updates for your approval before writing to `data/applicat
 - **Playwright errors**: If Chromium fails to launch, run `npx playwright install chromium`.
 - **Posting 403 or Login Walls**: Run `python3 tools/fetch_page.py "<URL>"` to fetch with full browser user-agent headers and check `robots.txt`.
 - **Database out of sync**: If `applications.db` does not match `applications.md`, run `node tracker.mjs sync --force` to rebuild the index.
+

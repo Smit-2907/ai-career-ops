@@ -48,3 +48,4 @@ Results-driven Software Engineer with hands-on experience building scalable back
 - **Languages:** Python, TypeScript, JavaScript, SQL, Bash
 - **Frameworks & Libraries:** FastAPI, Pydantic, PyTorch, LangChain, Playwright, Node.js
 - **Databases & Tools:** PostgreSQL, SQLite, Redis, Docker, Git, Linux
+
