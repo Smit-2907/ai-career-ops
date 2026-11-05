@@ -2,7 +2,17 @@
 
 **AI-Career-Ops** is a unified, best-of-both-worlds job application framework combining:
 1. **The Multi-Agent Intelligence of `ai-job-search`**: Specialized subagents (`posting-fetcher`, `drafter`, `application-reviewer`), pre-flight security guards (`posting_guard.py`), and adversarial Factual Grounding Audits.
-2. **The Industrial ATS Engine of `career-ops`**: 70+ direct ATS scrapers (Greenhouse, Lever, Workday, Ashby, etc.), Playwright HTML/CSS resume generation, interactive browser form auto-filling, Go TUI dashboard, and Next.js web application.
+2. **The Industrial ATS & Dual Resume Engine**: 70+ direct ATS scrapers (Greenhouse, Lever, Workday, Ashby, etc.), Playwright HTML/CSS resume generation, typographer-grade LaTeX moderncv engine, interactive browser form auto-filling, Go TUI dashboard, and Next.js web application.
+
+---
+
+## Dual Resume Generation Engines
+
+AI-Career-Ops supports **both major resume styles** out of the box:
+- **Engine 1: HTML / Playwright (Default)**: Zero TeX dependencies. Clean, responsive HTML/CSS rendered to PDF via Chromium. Deterministic ATS compliance with pixel-perfect margins.
+- **Engine 2: LaTeX Engine (Publication-Grade)**: Uses `moderncv` (compiled with LuaLaTeX) and `cover.cls` (XeLaTeX + `fontspec`). Pre-configured with master templates in `cv/main_example.tex` and `cover_letters/cover_example.tex`.
+
+Choose your preferred engine per application using `/apply <url> --latex` or setting `resume_engine: latex` in `config/profile.yml`.
 
 ---
 
@@ -18,6 +28,8 @@ ai-career-ops/
 ├── tools/                    # Python toolbelt: posting_guard, verify_pdf, fetch_page, robots_check
 ├── config/                   # profile.yml (Candidate facts, target roles, dealbreakers)
 ├── cv.md                     # Master resume source of truth in plain Markdown
+├── cv/                       # [LaTeX] moderncv master template (main_example.tex)
+├── cover_letters/            # [LaTeX] cover.cls class and template (cover_example.tex)
 ├── data/                     # applications.md (canonical tracker) & applications.db (SQLite cache)
 ├── documents/
 │   ├── applications/         # Per-job archives: <company>_<role>/ (JD, tailored CV, notes)

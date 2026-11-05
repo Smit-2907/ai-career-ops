@@ -156,10 +156,13 @@ Matching listings are automatically written to `data/pipeline.md` for review.
 
 ---
 
-## 6. Resume & PDF Compilation Engine
+## 6. Dual Resume & PDF Compilation Engines
 
-Resumes are written in clean Markdown/HTML and compiled to PDF via Playwright Chromium:
+AI-Career-Ops provides two distinct, fully supported resume generation engines so you can choose the style that fits your needs:
 
+### Engine 1: HTML / Playwright Engine (Default)
+- **Best for:** Fast, zero-dependency, ATS-optimized generation.
+- **Workflow:** Renders responsive HTML/CSS directly to PDF via Chromium.
 ```bash
 # Compile tailored HTML to PDF:
 node generate-pdf.mjs output/company-role.html output/company-role.pdf
@@ -168,9 +171,25 @@ node generate-pdf.mjs output/company-role.html output/company-role.pdf
 python3 tools/verify_pdf.py output/company-role.pdf --min-chars 100
 ```
 
-### Why HTML/Playwright beats LaTeX:
-- **No LaTeX dependency headaches**: No need to install multiple gigabytes of TeX Live packages (`lualatex`, `xelatex`, `fontspec`).
-- **Deterministic ATS compliance**: CSS layout is pixel-perfect and the text layer is 100% extractable by parsers like Greenhouse and Workday.
+### Engine 2: LaTeX Engine (Publication-Grade Typesetting)
+- **Best for:** Executive-tier typography, academic resumes, or candidates preferring TeX.
+- **Workflow:** Uses `moderncv` (banking style, compiled with `lualatex`) for CVs and `cover.cls` (compiled with `xelatex` + `fontspec`) for cover letters.
+- **Master Templates:**
+  - `cv/main_example.tex`
+  - `cover_letters/cover_example.tex` & `cover_letters/cover.cls`
+```bash
+# Compile tailored CV with LuaLaTeX:
+lualatex -interaction=nonstopmode -output-directory=cv cv/main_company_role.tex
+
+# Compile tailored Cover Letter with XeLaTeX:
+xelatex -interaction=nonstopmode -output-directory=cover_letters cover_letters/cover_company_role.tex
+
+# Automated layout verification:
+python3 tools/verify_layout.py cv/main_company_role.pdf --max-pages 2
+python3 tools/verify_pdf.py cv/main_company_role.pdf --min-chars 100
+```
+
+Select your engine per application via `/apply <url> --latex` or globally in `config/profile.yml` (`resume_engine: latex`).
 
 ---
 

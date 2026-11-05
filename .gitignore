@@ -27,6 +27,14 @@ modes/_brief.md
 
 # Legacy & User LaTeX / Word Resumes
 legacy-latex/
+cv/main_*.*
+!cv/main_example.tex
+cv/*.txt
+cover_letters/cover_*.*
+cover_letters/Cover_*.*
+!cover_letters/cover_example.tex
+!cover_letters/cover.cls
+!cover_letters/OpenFonts/**
 *Resume*
 *resume*
 
